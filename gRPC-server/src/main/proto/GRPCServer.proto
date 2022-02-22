@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "dev.kastro";
+option java_outer_classname = "GRPCServer";
+option objc_class_prefix = "HLW";
+
+package dev.kastro;
+
+service GRPCServerService {
+  rpc send (GRPCServerRequest) returns (GRPCServerReply) {}
+}
+
+message GRPCServerRequest {
+  string name = 1;
+}
+
+message GRPCServerReply {
+  string message = 1;
+}
